@@ -7,7 +7,7 @@ using namespace std;
 		int Length;
 		int Windth;
 };*/
-
+//Открытие файла с размерами массива
 szMs masSizeF(char *szNameFl)
 {
 	szMs szMass;
@@ -25,7 +25,7 @@ szMs masSizeF(char *szNameFl)
 		return szMass;
 	}
 }
-
+//Заполнение массива случайными числами из диапазона
 void FillingMassRand(void)
 {
 	char NameFlSize[255];
@@ -57,14 +57,13 @@ void FillingMassRand(void)
 	cout << "Фаил создан." << endl;
 	FMass.close();
 }
-
+//Ручное заполнение массива
 void FillingMassManual(void)
 {
 	char NameFlSize[255];
 	cout << "Введите имя файла содержащее размер массива: ";
 	cin >> NameFlSize;
 	szMs MassSize = masSizeF(NameFlSize);
-	
 	char NameFl[255];
 	cout << "Введите имя файла массива: ";
 	cin >> NameFl;
@@ -88,4 +87,28 @@ void FillingMassManual(void)
 	}
 	cout << endl << "Создание файла завершено." << endl;
 	FMass.close();
+}
+//открытие массива и его проверка
+void testMass(void)
+{
+	char NameFlSize[255];
+	cout << "Введите имя файла содержащее размер массива: ";
+	cin >> NameFlSize;
+	szMs MassSize = masSizeF(NameFlSize);
+	int **mass;
+	mass = new int*[MassSize.height];
+	for(int counter = 0; counter < MassSize.height; counter++)//создание массива.
+	{
+		mass[counter] = new int[MassSize.width];
+	}
+	
+	
+	
+	for(int counter = 0; counter < MassSize.height; counter++)//очистка памяти.
+	{
+		delete[]mass[counter];
+		mass[counter] = NULL;
+	}
+	delete[]mass;
+	mass = NULL;
 }

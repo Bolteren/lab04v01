@@ -11,3 +11,4 @@ class szMs
 szMs masSizeF(char *szNameFl);
 void FillingMassRand(void);
 void FillingMassManual(void);
+void testMass(void);
