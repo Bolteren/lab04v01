@@ -86,7 +86,28 @@ void FillingMassManual(void)
 //печать массива
 void printMass(char *szNameFl, char *massNameFl)
 {
-	cout << "Hell";
+	szMs massSize = masSizeF(szNameFl);
+	ifstream fileMass(massNameFl);
+	if(!fileMass.is_open())
+	{
+		cout << "ƒанный файл не возможно открыть!" << endl;
+		system("pause");
+		exit(-1);
+	}
+	else
+	{
+		for(int counter = 0; counter < massSize.height; counter++)
+		{
+			for(int num = 0; num < massSize.width; num++)
+			{
+				int a;
+				fileMass >> a;
+				cout << a << "\t";
+			}
+			cout << endl;
+		}
+		fileMass.close();
+	}
 }
 //открытие массива и его проверка
 void testMass(void)
