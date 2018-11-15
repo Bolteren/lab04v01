@@ -7,8 +7,8 @@ void menu1(void);
 int main() 
 {
 	setlocale(LC_ALL,"Russian");
+	srand(time(NULL));
 	
-	testMass();
 	
 	return 0;
 }
@@ -21,3 +21,5 @@ void menu1(void)
 	szMs sizMas = masSizeF(szNameFile);
 	cout << sizMas.height << " " << sizMas.width << endl;
 }
+
+
