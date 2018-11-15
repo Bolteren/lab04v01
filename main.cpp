@@ -4,11 +4,14 @@ using namespace std;
 
 void menu1(void);
 void menu2(void);
+void menu3(void);
+
+
 int main() 
 {
 	setlocale(LC_ALL,"Russian");
 	srand(time(NULL));
-	menu2();
+	menu3();
 	
 	return 0;
 }
@@ -30,4 +33,11 @@ void menu2(void)
 	cout << "¬ведите название файла с данными: ";
 	cin >> fileNameMass;
 	printMass(szNameFile, fileNameMass);
+}
+void menu3(void)
+{
+	cout << "¬ведите им€ файла с размером массива: ";
+	char nameFile[255];
+	cin >> nameFile;
+	editSizeF(nameFile);
 }

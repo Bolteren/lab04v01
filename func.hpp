@@ -14,3 +14,4 @@ void FillingMassRand(void);
 void FillingMassManual(void);
 void testMass(void);
 void printMass(char *szNameFl, char *massNameFl);
+void editSizeF(char *szNameFl);

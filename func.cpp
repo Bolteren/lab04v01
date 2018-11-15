@@ -83,6 +83,29 @@ void FillingMassManual(void)
 	cout << endl << "Создание файла завершено." << endl;
 	FMass.close();
 }
+//редактирование файла size
+void editSizeF(char *szNameFl)
+{
+	ofstream FileSize(szNameFl);
+	if(!FileSize.is_open())
+	{
+		cout << "Невозможно открыть данный файл!" << endl;
+		system("pause");
+		exit(-1);
+	}
+	else
+	{
+		cout << "Введите ширину массива: ";
+		int h = 0, w = 0;
+		cin >> h;
+		FileSize << h << "\t";
+		cout << "Введите высоту массива: ";
+		cin >> w;
+		FileSize << w;
+		cout << "Файл удачно отредактирован."
+		FileSize.close();
+	}
+}
 //печать массива
 void printMass(char *szNameFl, char *massNameFl)
 {
