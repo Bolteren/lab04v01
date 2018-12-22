@@ -1,6 +1,19 @@
 #include "func.hpp"
 
+
+
+/*-----------------------------------------
+Функции С++
+-----------------------------------------*/
+
+
+
 using namespace std;
+
+
+/*=========================================================
+//Работа с файлами при помощи потока ввода и вывода
+=========================================================*/
 
 //Открытие файла с размерами массива
 szMs masSizeF(char *szNameFl)
@@ -20,6 +33,8 @@ szMs masSizeF(char *szNameFl)
 		return szMass;
 	}
 }
+
+
 //Заполнение массива случайными числами из диапазона
 void FillingMassRand(void)
 {
@@ -52,6 +67,8 @@ void FillingMassRand(void)
 	cout << "Фаил создан." << endl;
 	FMass.close();
 }
+
+
 //Ручное заполнение массива
 void FillingMassManual(void)
 {
@@ -83,6 +100,8 @@ void FillingMassManual(void)
 	cout << endl << "Создание файла завершено." << endl;
 	FMass.close();
 }
+
+
 //редактирование файла size
 void editSizeF(char *szNameFl)
 {
@@ -102,10 +121,12 @@ void editSizeF(char *szNameFl)
 		cout << "Введите высоту массива: ";
 		cin >> w;
 		FileSize << w;
-		cout << "Файл удачно отредактирован."
+		cout << "Файл удачно отредактирован.";
 		FileSize.close();
 	}
 }
+
+
 //печать массива
 void printMass(char *szNameFl, char *massNameFl)
 {
@@ -132,6 +153,8 @@ void printMass(char *szNameFl, char *massNameFl)
 		fileMass.close();
 	}
 }
+
+
 //открытие массива и его проверка
 void testMass(void)
 {
@@ -170,15 +193,13 @@ void testMass(void)
 	
 	int tmpRows = MassSize.width / 2, tmpCols = MassSize.height / 2, ynum = 0;
 		/*Создение временного массива типов */
-		/* 1 0 0 0 1     и      	1 0 0 0 0 1
+		/* 1 0 0 0 1     и     	1 0 0 0 0 1
 		   0 1 0 1 0			0 1 0 0 1 0
 		   0 0 1 0 0			0 0 1 1 0 0
 		   0 0 1 0 0			0 0 1 1 0 0
 		*/
 	int **massNor;
 	massNor = new int*[MassSize.height];
-/* где-то ошибка в цикле.*/
-
 
 	for(int counter = 0; counter < MassSize.height; counter++)
 	{
@@ -188,12 +209,9 @@ void testMass(void)
 			massNor[counter][num] = 0;
 		}
 	}
-/*дальше не идет        -----------------------*/
 
-	int ctrRows = 0, ctrRowsEnd = (MassSize.width - 1), ctrCols = 0, ctrColsEnd = (MassSize.height - 1);
-	//rows = MassSize.width
-	//cols = MassSize.height
-	
+
+	int ctrRows = 0, ctrRowsEnd = (MassSize.width - 1), ctrCols = 0, ctrColsEnd = (MassSize.height - 1);	
 	while (1)
 		{
 			if(MassSize.height > 2 || MassSize.width > 3)
@@ -315,22 +333,6 @@ void testMass(void)
 			}
 			delete[]massNor;
 		massNor = NULL;	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	for(int counter = 0; counter < MassSize.height; counter++)//очистка памяти.
 	{
 		delete[]mass[counter];
@@ -339,3 +341,25 @@ void testMass(void)
 	delete[]mass;
 	mass = NULL;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
